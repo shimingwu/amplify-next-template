@@ -20,8 +20,8 @@ export const auth = defineAuth({
           familyName: "http://schemas.microsoft.com/ws/2008/06/identity/claims/groups",
         },
       },
-      logoutUrls: ["http://localhost:3001/"],
-      callbackUrls: ["http://localhost:3001/"],
+      logoutUrls: ["http://localhost:3001/", "https://main.dcw3c22itgwlj.amplifyapp.com/"],
+      callbackUrls: ["http://localhost:3001/", "https://main.dcw3c22itgwlj.amplifyapp.com/"],
     },
   },
 });
