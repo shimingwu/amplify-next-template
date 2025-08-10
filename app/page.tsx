@@ -51,28 +51,17 @@ export default function App() {
           </li>
         ))}
       </ul>
+      <h1>My objects (API calls)</h1>
+      <button onClick={() => window.location.href = '/posts'}>Try API calls</button>
+      <br />
       <div>
         🥳 App successfully hosted. Try creating a new todo.
         <br />
         <a href="https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/">
           Review next steps of this tutorial.
         </a>
-        <br /><br />
-        <a 
-          href="/posts" 
-          style={{
-            display: "inline-block",
-            padding: "10px 20px",
-            backgroundColor: "#0070f3",
-            color: "white",
-            textDecoration: "none",
-            borderRadius: "5px",
-            marginRight: "10px"
-          }}
-        >
-          🚀 Test Post APIs
-        </a>
       </div>
+      <br />
       <button onClick={signOut}>Sign out</button>
     </main>
   );

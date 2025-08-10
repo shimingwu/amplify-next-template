@@ -1,4 +1,5 @@
 import { defineAuth } from "@aws-amplify/backend";
+import { UserAttributeKey } from 'aws-amplify/auth'; 
 
 /**
  * Define and configure your auth resource
@@ -16,6 +17,7 @@ export const auth = defineAuth({
         },
         attributeMapping: {
           email: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
+          familyName: "http://schemas.microsoft.com/ws/2008/06/identity/claims/groups",
         },
       },
       logoutUrls: ["http://localhost:3001/"],
