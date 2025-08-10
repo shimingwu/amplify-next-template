@@ -57,6 +57,21 @@ export default function App() {
         <a href="https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/">
           Review next steps of this tutorial.
         </a>
+        <br /><br />
+        <a 
+          href="/posts" 
+          style={{
+            display: "inline-block",
+            padding: "10px 20px",
+            backgroundColor: "#0070f3",
+            color: "white",
+            textDecoration: "none",
+            borderRadius: "5px",
+            marginRight: "10px"
+          }}
+        >
+          🚀 Test Post APIs
+        </a>
       </div>
       <button onClick={signOut}>Sign out</button>
     </main>
