@@ -8,8 +8,8 @@ import outputs from "@/amplify_outputs.json";
 // Configure Amplify (needed for authentication wrapper)
 Amplify.configure(outputs);
 
-// Base API URL for restful-api.dev
-const API_BASE_URL = "https://api.restful-api.dev/objects";
+// Use Next.js API routes instead of direct external API calls
+const API_BASE_URL = "/api/objects";
 
 interface ApiObject {
   id?: string;
@@ -139,7 +139,7 @@ export default function PostsPage() {
 
   // Get a specific object by ID (GET)
   const getObject = async (id: string) => {
-    const url = `${API_BASE_URL}/${id}`;
+    const url = `${API_BASE_URL}?id=${id}`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -158,7 +158,7 @@ export default function PostsPage() {
   const deleteObject = async (id: string) => {
     if (!confirm("Are you sure you want to delete this object?")) return;
 
-    const url = `${API_BASE_URL}/${id}`;
+    const url = `${API_BASE_URL}?id=${id}`;
     try {
       const response = await fetch(url, {
         method: "DELETE",
