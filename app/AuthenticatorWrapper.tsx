@@ -2,6 +2,14 @@
 
 import { Authenticator } from "@aws-amplify/ui-react";
 import { signInWithRedirect } from "aws-amplify/auth";
+import { Amplify } from "aws-amplify";
+import outputs from "@/amplify_outputs.json";
+import { UserAuthProvider } from "@/contexts/UserAuthContext";
+
+// Configure Amplify with SSR support - CRITICAL for server-side auth
+Amplify.configure(outputs, {
+  ssr: true // This enables cookie-based auth for server-side routes
+});
 
 // Custom Sign-In Component with SAML option
 function CustomSignIn() {
@@ -50,7 +58,9 @@ export default function AuthenticatorWrapper({
         }
       }}
     >
-      {children}
+      <UserAuthProvider>
+        {children}
+      </UserAuthProvider>
     </Authenticator>
   );
 }

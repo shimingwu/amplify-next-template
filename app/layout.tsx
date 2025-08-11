@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./app.css";
 import AuthenticatorWrapper from "./AuthenticatorWrapper";
 import "@aws-amplify/ui-react/styles.css";
+import "./amplify-theme-override.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

@@ -1,0 +1,48 @@
+/* TARGETED PURPLE ELIMINATION - Only target specific purple sources */
+
+/* Only target the main page containers for white background */
+html, 
+body {
+  background-color: white !important;
+  background-image: none !important;
+}
+
+/* Target main content areas but preserve all button styling */
+main > div:not([style*="background-color"]),
+.amplify-authenticator > div:not([style*="background-color"]) {
+  background-color: white !important;
+  background-image: none !important;
+}
+
+/* Override all possible CSS custom properties */
+:root {
+  --amplify-colors-brand-primary-10: white !important;
+  --amplify-colors-brand-primary-20: white !important;
+  --amplify-colors-brand-primary-40: #e9ecef !important;
+  --amplify-colors-brand-primary-60: #6c757d !important;
+  --amplify-colors-brand-primary-80: #495057 !important;
+  --amplify-colors-brand-primary-90: #343a40 !important;
+  --amplify-colors-brand-primary-100: #212529 !important;
+  
+  /* Kill any purple variables */
+  --background-start-rgb: 255, 255, 255 !important;
+  --background-end-rgb: 255, 255, 255 !important;
+  --card-rgb: 255, 255, 255 !important;
+}
+
+/* Target only gradient backgrounds that are NOT on buttons */
+div[style*="gradient"]:not(button),
+section[style*="linear-gradient"],
+div[style*="radial-gradient"]:not(button) {
+  background: white !important;
+  background-image: none !important;
+}
+
+/* Override specific purple hex values only */
+*[style*="#6C5CE7"],
+*[style*="#A29BFE"],
+*[style*="#835BD9"],
+*[style*="#CBBEFF"],
+*[style*="#dadbf9"] {
+  background-color: white !important;
+}

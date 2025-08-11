@@ -1,0 +1,137 @@
+/* Override Amplify UI React default purple theme with neutral colors */
+
+/* Override Amplify UI primary colors */
+:root {
+  --amplify-colors-brand-primary-10: #ffffff;
+  --amplify-colors-brand-primary-20: #f8f9fa;
+  --amplify-colors-brand-primary-40: #e9ecef;
+  --amplify-colors-brand-primary-60: #6c757d;
+  --amplify-colors-brand-primary-80: #495057;
+  --amplify-colors-brand-primary-90: #343a40;
+  --amplify-colors-brand-primary-100: #212529;
+}
+
+/* Override button styles */
+[data-amplify-theme] button[data-variation="primary"] {
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+}
+
+[data-amplify-theme] button[data-variation="primary"]:hover {
+  background-color: #0056b3 !important;
+  border-color: #0056b3 !important;
+}
+
+/* Override link colors */
+[data-amplify-theme] a {
+  color: #007bff !important;
+}
+
+[data-amplify-theme] a:hover {
+  color: #0056b3 !important;
+}
+
+/* Override focus states */
+[data-amplify-theme] *:focus {
+  outline-color: #007bff !important;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25) !important;
+}
+
+/* Override input focus */
+[data-amplify-theme] input:focus,
+[data-amplify-theme] select:focus,
+[data-amplify-theme] textarea:focus {
+  border-color: #007bff !important;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25) !important;
+}
+
+/* Override any purple backgrounds */
+[data-amplify-theme] .amplify-button--primary {
+  background-color: #007bff !important;
+}
+
+/* Override tabs and navigation if any */
+[data-amplify-theme] [data-amplify-router-active] {
+  color: #007bff !important;
+  border-bottom-color: #007bff !important;
+}
+
+/* Make sure body background is white and remove the purple gradient */
+body {
+  background: white !important;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+/* Temporarily disable these rules to test button visibility */
+/*
+[data-amplify-theme] div:not(button),
+[data-amplify-theme] section:not(button) {
+  background-color: unset;
+}
+
+div:not(button), 
+section:not(button), 
+main:not(button) {
+  background-image: none !important;
+}
+*/
+
+/* Override any gradient backgrounds and main containers */
+.amplify-authenticator {
+  background: white !important;
+}
+
+/* Target main page containers specifically */
+main {
+  background: white !important;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+/* Target any containers that might have purple gradients */
+html {
+  background: white !important;
+  background-image: none !important;
+}
+
+/* Override the CSS variables that control gradients */
+html {
+  --background-start-rgb: 255, 255, 255 !important;
+  --background-end-rgb: 255, 255, 255 !important;
+}
+
+/* Override specific purple hex colors */
+*[style*="#6C5CE7"],
+*[style*="#A29BFE"],
+*[style*="#835BD9"],
+*[style*="#CBBEFF"],
+*[style*="#dadbf9"] {
+  background-color: white !important;
+  color: #495057 !important;
+}
+
+/* Only target specific containers that might have purple gradients */
+/* 
+[data-amplify-theme],
+.amplify-authenticator,
+#__next {
+  background: white !important;
+  background-image: none !important;
+}
+*/
+
+/* CRITICAL: Preserve ALL button styling */
+[data-amplify-theme] button,
+.amplify-authenticator button,
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"] {
+  background: revert !important;
+  background-color: revert !important;
+  background-image: revert !important;
+  color: revert !important;
+  border: revert !important;
+  padding: revert !important;
+}
